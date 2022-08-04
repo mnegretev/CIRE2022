@@ -427,7 +427,12 @@ obstacle_detected = msg.ranges[n] < 1.0
 msg_cmd_vel = Twist()
 msg_cmd_vel.linear.x = 0 if obstacle_detected else 0.3
 pub_cmd_vel.publish(msg_cmd_vel)
-  \end{lstlisting}
+\end{lstlisting}
+\item Corra el programa con los comandos:
+  \begin{verbatim}
+$ source ~/CIRE2022/catkin_ws/devel/setup.bash
+$ rosrun exercises exercise01.py
+\end{verbatim}
   \item Describir qué hace el programa y, de ser posible, realice un diagrama de flujo o esquema similar. 
   \end{enumerate}
 \end{frame}
