@@ -21,6 +21,9 @@ Abra una terminal y ejecute los siguientes comandos:
 
 * $ cd CIRE2022
 * $ git pull
+* $ cd catkin_ws
+* $ catkin_make
+* $ source devel/setup.bash
 * $ roslaunch bring_up stage02.launch
 
 Se debería ver un RViz como el siguiente:
