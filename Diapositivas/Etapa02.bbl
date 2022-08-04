@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{Arkin1998BehBasedRobo}
+R.~Arkin.
+\newblock {\em Behavior-Based Robotics}.
+\newblock MIT Press, 1998.
+
+\bibitem{bogue2012robots}
+R.~Bogue.
+\newblock Robots for space exploration.
+\newblock {\em Industrial Robot: An International Journal}, 2012.
+
+\bibitem{choset2005principles}
+H.~M. Choset, K.~M. Lynch, S.~Hutchinson, G.~Kantor, W.~Burgard, L.~Kavraki,
+  S.~Thrun, and R.~C. Arkin.
+\newblock {\em Principles of robot motion: theory, algorithms, and
+  implementation}.
+\newblock MIT press, 2005.
+
+\bibitem{ellery2016survey}
+A.~Ellery.
+\newblock Survey of past rover missions.
+\newblock In {\em Planetary Rovers}, pages 59--69. Springer, 2016.
+
+\bibitem{Latombe1991MotionPlanning}
+J.~Latombe.
+\newblock {\em Robot Motion Planning}.
+\newblock Kluwer Academic, 1991.
+
+\end{thebibliography}

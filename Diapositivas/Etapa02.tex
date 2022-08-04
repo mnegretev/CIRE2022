@@ -119,16 +119,102 @@
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%% INTRODUCCIÓN
+%%%%%%%%%%%%%%%%%%%%% MOTIVACIÓN
 %%%%%%%%%%%%%%%%%%%%%
-\section{Introducción}
-\begin{frame}\frametitle{Los robots en el espacio}
+\section{Motivación}
+\begin{frame}\frametitle{Los robots en el espacio (Rovers)}
+  El uso de robots en la exploración del espacio tiene varias décadas\cite{ellery2016survey}:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+      \item En 1970, la URSS envió el Lunokhod 1 (teleoperado)
+      \item En 1997 la NASA envío el Mars Pathfinder Sojourner (evasión autónoma de obtáculos)
+      \item En 2004 aterrizaron en Marte el Spirit y Opportunity (autónomos)
+      \item En 2012 aterrizó el Curiosity (autónomo)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.45\textwidth]{Figures/RoverLunokhod1.jpg}
+        \includegraphics[width=0.45\textwidth]{Figures/RoverSojourner.jpg}
+        \includegraphics[width=0.45\textwidth]{Figures/RoverOpportunity.jpg}
+        \includegraphics[width=0.45\textwidth]{Figures/RoverCuriosity.jpg}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Los robots en el espacio (Humanoides)}
+  Además de rovers, también hay desarrollo en robots de servicio para aplicaciones aeroespaciales\cite{bogue2012robots}:
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.45\textwidth]{Figures/RobotRobonaut.jpg}
+        \includegraphics[width=0.45\textwidth]{Figures/RobotJustin.jpg}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+      \item Robonaut R2, desarrollado por DARPA/NASA, en la ISS en 2011$^1$
+      \item Rollin'Justin, desarrollado por el DLR$^2$
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  $^1$\footnotesize{\url{https://www.nasa.gov/robonaut2}}\\
+  $^2$\footnotesize{\url{https://www.dlr.de/rm/en/desktopdefault.aspx/tabid-11427/}}
 \end{frame}
 
 \begin{frame}\frametitle{ROS en proyectos aeroespaciales}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+      \item ROS Space: La plataforma ROS con estándar aeroespacial para software$^1$
+      \item Robonaut 2 y 5 utilizan ROS y tienen sus versiones en Gazebo$^2$
+      \item Astrobee, desarrollado por la NASA utiliza ROS$^3$
+      \item El proyecto VIPER (NASA) utiliza Gazebo para simulaciones$^4$ 
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.45\textwidth]{Figures/ROSRobonaut.png}
+        \includegraphics[width=0.45\textwidth]{Figures/ROSAstrobee.png}
+        \includegraphics[width=0.45\textwidth]{Figures/ROSViper.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  $^1$\footnotesize{\url{https://vimeo.com/649649866/37198994b5}}\\
+  $^2$\footnotesize{\url{https://robots.ros.org/robonaut2/}}\\
+  $^3$\footnotesize{\url{https://github.com/nasa/astrobee}}\\
+  $^4$\footnotesize{\url{https://www.openrobotics.org/blog/2022/2/2/rosinspace}}
 \end{frame}
 
 \begin{frame}\frametitle{El robot Toyota HSR}
+  El \textit{Human Support Robot} (HSR) de Toyota es una plataforma para investigación en robots de servicio.
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \includegraphics[width=0.9\textwidth]{Figures/HSR.jpg}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      Hardware:
+      \begin{itemize}
+      \item Base móvil omnidireccional
+      \item Manipulador de 5 DoF
+      \item Cámaras RGB y RGB-D en la cabeza
+      \item Cámara RGB en el efector final
+      \item Lidar en la base móvil
+      \item Bocinas y micrófono
+      \end{itemize}
+      Software: Arquitectura basada en ROS con las siguientes funcionalidades:
+      \begin{itemize}
+      \item Control de la base móvil
+      \item Control del manipulador
+      \item Acceso a los datos de los sensores mediante tópicos
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -227,6 +313,11 @@ Las tareas que puede llevar a cabo un robot se pueden clasificar en tres grandes
   \end{figure}
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% ROS
+%%%%%%%%%%%%%%%%%%%%%
+\section{ROS}
 \begin{frame}\frametitle{La plataforma ROS}
   \includegraphics[width=0.3\textwidth]{Figures/Ros_logo.png}
   \[\]
@@ -317,27 +408,29 @@ Las tareas que puede llevar a cabo un robot se pueden clasificar en tres grandes
   \end{itemize}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Tarea 1}
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% Ejercicio
+%%%%%%%%%%%%%%%%%%%%%
+\section{Ejercicios}
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 1}
   \begin{enumerate}
   \item Investigar para qué sirve el mensaje \texttt{LaserScan}
   \item Investigar para qué sirve el mensaje \texttt{Twist}
   \item Buscar para qué sirven los comandos: \texttt{rosrun}, \texttt{rostopic list} y \texttt{rostopic echo}
-  \item Abra el archivo \texttt{catkin\_ws/src/students/scripts/assignment01.py} y agregue el siguiente código en la línea 25:
-  \begin{lstlisting}[language=Python,firstnumber=25]
+  \item Abra el archivo \texttt{catkin\_ws/src/exercises/scripts/exercise01.py} y agregue el siguiente código en la línea 27:
+  \begin{lstlisting}[language=Python,firstnumber=27]
 n = int((msg.angle_max - msg.angle_min)/msg.angle_increment/2)
 obstacle_detected = msg.ranges[n] < 1.0
   \end{lstlisting}
-  En el mismo archivo, en la línea 45, agregue el siguiente código:
-  \begin{lstlisting}[language=Python,firstnumber=45]
+  En el mismo archivo, en la línea 49, agregue el siguiente código:
+  \begin{lstlisting}[language=Python,firstnumber=49]
 msg_cmd_vel = Twist()
 msg_cmd_vel.linear.x = 0 if obstacle_detected else 0.3
 pub_cmd_vel.publish(msg_cmd_vel)
   \end{lstlisting}
-  \item Describir qué hace el programa de la tarea 1, de ser posible, agregue un diagrama de flujo o esquema similar. 
+  \item Describir qué hace el programa y, de ser posible, realice un diagrama de flujo o esquema similar. 
   \end{enumerate}
 \end{frame}
-
-
 
 \bibliographystyle{abbrv}
 \bibliography{References}
