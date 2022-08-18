@@ -86,10 +86,14 @@ class Inicio (smach.State):
     	# Aqui va lo que se desea ejecutar en el estado
 
         print('inicializando')
-
-        meta_leida=rospy.wait_for_message('meta_competencia',PoseStamped)
-        #rospy.sleep(1)#### dar tiempo al arbol de tfs de publicarse
+        ########
+        
+        rospy.sleep(1)#### dar tiempo al arbol de tfs de publicarse
+        
+       
         ##### agregue código para leer la meta en el tópico adecuado
+        ###meta_leida=
+        
         ############
 
 
@@ -99,7 +103,7 @@ class Inicio (smach.State):
         ####################################################################
         punto_inicial = get_coords()
         print ( 'tiempo = '+ str(punto_inicial.header.stamp.to_sec()) , punto_inicial.transform )
-        print ('meta leida', meta_leida)
+        #print ('meta leida', meta_leida)
         print('arrancando')
         return 'succ'
 
