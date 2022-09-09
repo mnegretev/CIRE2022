@@ -1,0 +1,7 @@
+<library path="lib/libhsrb_moveit_kinematics">
+  <class name="hsrb_moveit_kinematics/HSRBKinematicsPlugin" type="hsrb_moveit_kinematics::HSRBKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>
+      HSR-B whole body kinematics plugin for MoveIt.
+    </description>
+  </class>
+</library>

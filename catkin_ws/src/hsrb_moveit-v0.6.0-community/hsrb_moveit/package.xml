@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>hsrb_moveit</name>
+  <version>0.6.0</version>
+  <description>hsrbでmoveitを動かすための設定</description>
+  <maintainer email="koji_terada@mail.toyota.co.jp">Koji Terada</maintainer>
+  <license>HSR Software License for Community Software A</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>hsrb_moveit_config</run_depend>
+  <run_depend>hsrb_moveit_plugins</run_depend>
+  <export>
+    <metapackage/>
+  </export>
+</package>

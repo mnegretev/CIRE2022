@@ -1,0 +1,12 @@
+<library path="libhsrb_moveit_controller_manager">
+  <class name="hsrb_moveit_fake_controller_manager/MoveItFakeControllerManager"
+         type="moveit_fake_controller_manager::MoveItFakeControllerManager"
+         base_class_type="moveit_controller_manager::MoveItControllerManager">
+    <description> Moveit fake controller manager for HSR-B</description>
+  </class>
+  <class name="hsrb_moveit_simple_controller_manager/MoveItSimpleControllerManager"
+         type="moveit_simple_controller_manager::MoveItSimpleControllerManager"
+         base_class_type="moveit_controller_manager::MoveItControllerManager">
+    <description> Moveit controller manager for HSR-B</description>
+  </class>
+</library>

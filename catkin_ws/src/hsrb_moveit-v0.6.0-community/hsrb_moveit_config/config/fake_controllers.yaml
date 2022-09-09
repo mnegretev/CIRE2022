@@ -1,0 +1,24 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - arm_lift_joint
+      - arm_flex_joint
+      - arm_roll_joint
+      - wrist_flex_joint
+      - wrist_roll_joint
+      - wrist_ft_sensor_frame_joint
+  - name: fake_gripper_controller
+    joints:
+      - hand_motor_joint
+      - hand_l_distal_joint
+      - hand_r_distal_joint
+      - hand_l_spring_proximal_joint
+      - hand_r_spring_proximal_joint
+  - name: fake_base_controller
+    type: multidof interpolate
+    joints:
+      - world_joint
+  - name: fake_head_controller
+    joints:
+      - head_pan_joint
+      - head_tilt_joint

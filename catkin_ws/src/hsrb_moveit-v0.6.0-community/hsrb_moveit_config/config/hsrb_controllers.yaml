@@ -1,0 +1,34 @@
+controller_list:
+  - name: hsrb/arm_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - arm_lift_joint
+      - arm_flex_joint
+      - arm_roll_joint
+      - wrist_flex_joint
+      - wrist_roll_joint
+      - wrist_ft_sensor_frame_joint
+  - name: hsrb/gripper_controller
+    action_ns: follow_joint_trajectory
+    gripper_ns: grasp
+    type: HsrbGripperCommand
+    default: true
+    joints:
+      - hand_motor_joint
+      - hand_l_spring_proximal_joint
+      - hand_r_spring_proximal_joint
+  - name: hsrb/omni_base_controller
+    action_ns: follow_joint_trajectory
+    type: FollowOmniBaseTrajectory
+    default: true
+    joints:
+      - world_joint
+  - name: hsrb/head_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - head_pan_joint
+      - head_tilt_joint

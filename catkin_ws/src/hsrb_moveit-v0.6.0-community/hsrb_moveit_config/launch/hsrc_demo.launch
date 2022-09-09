@@ -1,0 +1,9 @@
+<launch>
+  <arg name="db" default="false" />
+  <arg name="use_gui" default="true" />
+  <arg name="debug" default="false" />
+  <include file="$(find hsrb_moveit_config)/launch/hsrb_demo.launch" pass_all_args="true" >
+    <arg name="robot_name" value="hsrc" />
+    <arg name="upload_robot_model_launch" value="$(find hsrc_description)/robots/upload_hsrc.launch" />
+  </include>
+</launch>

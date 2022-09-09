@@ -1,0 +1,155 @@
+hsrb_moveit
+===========
+
+HSR Software License for Community Software A (Version 1.0)
+
+PLEASE READ THIS SOFTWARE LICENSE AGREEMENT (“LICENSE”) CAREFULLY BEFORE USING THE COMMUNITY SOFTWARE. BY USING THE COMMUNITY SOFTWARE, YOU ARE AGREEING TO BE BOUND BY THE TERMS OF THIS LICENSE. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE, DO NOT INSTALL AND/OR USE THE COMMUNITY SOFTWARE.
+
+Use in source and binary forms of the software (the “Community Software”) is permitted provided that the following conditions are met:
+
+Article 1: Definitions
+
+1.1  “TMC” shall mean Toyota Motor Corporation, having its principal place of business at 1, Toyota-cho, Toyota-shi, Aichi 471-8571, Japan, and its affiliates designated by Toyota Motor Corporation.
+1.2  “License” shall mean the terms and conditions for use as defined by Articles 1 through 3 of this document.
+1.3  “HSR” shall mean a human support robot categorized as Mobile Servant in ISO13482 and developed by TMC.
+1.4  “HSR Research Agreement” shall mean the agreement for development of HSR with TMC.
+1.5  “HSR Developers Community” shall mean the community organized by TMC for development of the HSR.
+1.6  “Community Member” shall mean TMC and a party who develop the HSR under the HSR Research Agreement.
+1.7  "Collaborator" shall mean a third party who shall be placed under all the obligations which Community Member shall fulfill under the HSR Research Agreement.
+1.8  “Background IPR” shall mean patent right, utility model right and design patent that is or will be registered in the Patent Office, owned by the owner of the Community Software and necessary for use of the Community Software.
+1.9  “Robot Product” shall mean a product that has sensors and actuators for executions of certain movements based on commands of the Community Software.
+1.10  “Modifications” shall mean software modified based on the Community Software.
+1.11  “You or Your” means you, any entity on whose behalf you are acting, and anyone who you or such entity authorizes to use the Community Software.
+
+Article 2: License
+
+2
+2.1 In case that a) You are Community Member or b) You used the Community Software while You were Community Member before:
+(1) You may use and modify the Community Software and the Modifications without any compensation only for the purpose of research, development, production and sale of the Robot Product by You. Notwithstanding the foregoing, You shall prevent a third party who purchases the Robot Product from modifying, copying, reverse-engineering the Community Software in the Robot Product and accessing the source code of the Community Software in the Robot Product;
+(2) If the Community Software uses the Background IPR, You shall obtain a license of the Background IPR for commercial use of the Community Software under terms and conditions to be discussed with the owner of such Background IPR separately;
+(3) You shall not divulge the Community Software and the Modifications to any person other than Your employees, Your board members or Your Collaborator;
+(4) Collaborator may use and modify the Community Software and the Modifications for You and the purpose provided in (1) of this Article; and
+(5) You may distribute the Modifications to the HSR Developers Community provided that i) You shall notify TMC of Your intent and shall disclose the Modifications to TMC and ii) TMC agrees to distribute the Modifications.
+2.2 In case that a) You never became Community Member or b) You never used the Community Software while You were Community Member before, You shall not use, modify, distribute nor reverse-engineer the Community Software. Notwithstanding the foregoing, if the Community Software installed into the Robot Products legally purchased by You or made available to You, You may use such Community Software only for the purpose of use of such Robot Products and You shall not modify, distribute nor reverse-engineer such Community Software.
+2.3 You shall not delete the copyright notice and the disclaimer of warranties from a copy of the Community Software and the Modifications.
+2.4 You shall attach this file to a copy of the Community Software and the Modifications.
+2.5 TMC, at its discretion, may make available future upgrades or updates to the Community Software for Your TMC-branded hardware. Upgrades and updates, if any, may not necessarily include all existing software features or new features that TMC releases for newer or other models of TMC-branded hardware. The terms of this License will govern any software upgrades or updates provided by TMC that replace and/or supplement the original Community Software product, unless such upgrade or update is accompanied by a separate license in which case the terms of that license will govern.
+2.6 Title and intellectual property rights in and to any content displayed by or accessed through the Community Software belongs to the respective content owner. Such content may be protected by copyright or other intellectual property laws and treaties, and may be subject to terms of use of the third party providing such content. Except as otherwise provided herein, this License does not grant You any rights to use such content nor does it guarantee that such content will continue to be available to You.
+2.7 You agree to use the Community Software in compliance with all applicable laws, including local laws of the jurisdiction in which You reside or in which You download or use the Community Software. Features of the Community Software may not be available in all languages or jurisdictions and some features may vary by jurisdiction. An Internet connection may be required for some features of the Community Software.
+
+Article 3: Trademark
+
+You agree not to use any trademark, service mark, or trade dress owned by TMC or its affiliated companies, whether registered or unregistered, except to the extent any such mark is incorporated into the Community Software. Any other use or reproduction of any trademark, service mark, or trade dress owned by TMC or its affiliated companies is prohibited.
+
+Article 4: Termination
+
+4.1 This License is effective until terminated. Your rights under this License will terminate automatically or otherwise cease to be effective without notice from TMC if You fail to comply with any term(s) of this License. Upon termination of this License, You shall cease all use of the Community Software and destroy all copies, full or partial, of the Community Software. Sections 2.2 through 2.7 and 3 through 12 of this License shall survive termination.
+4.2 If any term or provision of this License is invalid, illegal or unenforceable in any jurisdiction, such invalidity, illegality or unenforceability shall not affect any other term or provision of this License or invalidate or render unenforceable such term or provision in any other jurisdiction.
+
+Article 5: Contract Waiver
+
+Any failure by TMC to enforce strictly a provision of this License shall in no event be considered a waiver of any part of such provision. No waiver by TMC of any breach or default by You shall operate as a waiver of any succeeding breach or other default or breach. No waiver shall have any effect unless it is specific, irrevocable and in writing.
+
+Article 6: Disclaimer of Warranties
+
+YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT, TO THE EXTENT PERMITTED BY APPLICABLE LAW, USE OF THE COMMUNITY SOFTWARE AND ANY SERVICES PERFORMED BY OR ACCESSED THROUGH THE COMMUNITY SOFTWARE IS AT YOUR SOLE RISK AND THAT THE ENTIRE RISK AS TO SATISFACTORY QUALITY, PERFORMANCE, ACCURACY AND EFFORT IS WITH YOU.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COMMUNITY SOFTWARE AND SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE”, WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND TMC AND TMC'S LICENSORS (COLLECTIVELY REFERRED TO AS “TMC” FOR THE PURPOSES OF SECTIONS 3 AND 4) HEREBY DISCLAIM ALL WARRANTIES AND CONDITIONS WITH RESPECT TO THE COMMUNITY SOFTWARE AND SERVICES, EITHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, QUIET ENJOYMENT, AND NON-INFRINGEMENT OF THIRD PARTY RIGHTS.
+TMC DOES NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE COMMUNITY SOFTWARE AND SERVICES, THAT THE FUNCTIONS CONTAINED IN, OR SERVICES PERFORMED OR PROVIDED BY, THE COMMUNITY SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT THE OPERATION OF THE COMMUNITY SOFTWARE OR SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE, THAT ANY SERVICES WILL CONTINUE TO BE MADE AVAILABLE, THAT THE COMMUNITY SOFTWARE OR SERVICES WILL BE COMPATIBLE OR WORK WITH ANY THIRD PARTY SOFTWARE, APPLICATIONS OR THIRD PARTY SERVICES, OR THAT DEFECTS IN THE COMMUNITY SOFTWARE OR SERVICES WILL BE CORRECTED. INSTALLATION OF THE COMMUNITY SOFTWARE MAY AFFECT THE AVAILABILITY AND USABILITY OF THIRD PARTY SOFTWARE, APPLICATIONS OR THIRD PARTY SERVICES, AS WELL AS TMC PRODUCTS AND SERVICES.
+YOU FURTHER ACKNOWLEDGE THAT THE TMC COMMUNITY SOFTWARE AND SERVICES ARE NOT INTENDED OR SUITABLE FOR USE IN SITUATIONS OR ENVIRONMENTS WHERE THE FAILURE OR TIME DELAYS OF, OR ERRORS OR INACCURACIES IN THE CONTENT, DATA OR INFORMATION PROVIDED BY, THE TMC COMMUNITY SOFTWARE OR SERVICES COULD LEAD TO DEATH, PERSONAL INJURY, OR SEVERE PHYSICAL OR ENVIRONMENTAL DAMAGE, INCLUDING WITHOUT LIMITATION THE OPERATION OF NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, LIFE SUPPORT OR WEAPONS SYSTEMS.
+NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY TMC OR A TMC AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SHOULD THE COMMUNITY SOFTWARE OR SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.
+
+Article 7: Liability
+
+TO THE EXTENT NOT PROHIBITED BY APPLICABLE LAW, IN NO EVENT SHALL TMC BE LIABLE FOR PERSONAL INJURY, OR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, CORRUPTION OR LOSS OF DATA, FAILURE TO TRANSMIT OR RECEIVE ANY DATA OR INFORMATION, BUSINESS INTERRUPTION OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO YOUR USE OR INABILITY TO USE THE COMMUNITY SOFTWARE OR SERVICES OR ANY THIRD PARTY SOFTWARE OR APPLICATIONS IN CONJUNCTION WITH THE COMMUNITY SOFTWARE OR SERVICES, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT OR OTHERWISE) AND EVEN IF TMC HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR PERSONAL INJURY, OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event, shall TMC's total liability to You for all damages (other than as may be required by applicable law in cases involving personal injury) exceed the amount of fifty dollars ($50.00). The foregoing limitations will apply even if the above stated remedy fails of its essential purpose.
+
+Article 8: Misuse or Use Outside the License Terms
+
+You shall indemnify, defend and hold harmless TMC and its officers, directors, employees, agents, successors and assigns from and against any and all losses, damages, liabilities, deficiencies, claims, actions, judgments, settlements, interest, awards, penalties, fines, costs or expenses, including reasonable attorneys' fees and the costs of enforcing any right to indemnification hereunder in connection with any claim, suit, action or proceeding by a third party that arises out of or relates to any: allegation of facts that, if true, would constitute Community Member’s breach of any of its representations, warranties, covenants or obligations under this License, including, but not limited to, a violation of the license grant; or any act or omission by You, any third party acting on behalf of You, connection with this License.
+
+Article 9: Independent Contractor
+
+Nothing in this License creates any agency, joint venture, partnership or other form of joint enterprise, employment or fiduciary relationship between the parties. Neither party has any express or implied right or authority to assume or create any obligations on behalf of or in the name of the other party or to bind the other party to any contract, agreement or undertaking with any third party.
+
+Article 10: Personal License
+
+Except as specifically permitted in the license grant, You shall not assign or otherwise transfer any of Your rights, or delegate or otherwise transfer any of Your obligations or performance, in whole or in part, under this License, in each case whether voluntarily, involuntarily, by operation of law or otherwise, for purposes of the preceding sentence, and without limiting its generality, any merger, consolidation or reorganization involving You (regardless of whether You are a surviving or disappearing entity) will be deemed to be a transfer of rights, obligations or performance under this License that are prohibited by this License. Any purported assignment, delegation or transfer in violation of this License is void. This License is binding upon and inures to the benefit of the parties hereto.
+
+Article 11: Controlling Law
+
+This License will be governed by and construed in accordance with the laws of Japan without regard to its choice of law or conflicts of law principles. This License shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods, the application of which is expressly excluded.  Any proceedings regarding this License will be conducted solely in a court of appropriate jurisdiction in Tokyo, Japan and in the Japanese language.
+
+Article 12: Entire Agreement
+
+This License constitutes the complete statement of all mutual understandings between TMC and You with respect to the Community Software. This License and the HSR Research Agreement should be construed to avoid any conflicts. If a court of competent jurisdiction holds that a conflict is unavoidable, the terms and conditions of the HSR Research Agreement shall prevail. This License supersedes and prevails over any terms of any agreement between Community Member and Collaborator as it relates to the Community Software. The headings used in this agreement are solely for the convenience of the parties and do not limit the construction of this License, which will be considered as a whole.
+
+moveit_fake_controller_manager
+==============================
+
+Software License Agreement (BSD License)
+
+Copyright (c) 2013, Ioan A. Sucan
+Copyright (c) 2016, Robert Haschke
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above
+  copyright notice, this list of conditions and the following
+  disclaimer in the documentation and/or other materials provided
+  with the distribution.
+* Neither the name of Ioan A. Sucan nor the names of its
+  contributors may be used to endorse or promote products derived
+  from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+moveit_simple_controller_manager
+================================
+
+Software License Agreement (BSD License)
+
+Copyright (c) 2013, Unbounded Robotics Inc.
+Copyright (c) 2012, Willow Garage, Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above
+  copyright notice, this list of conditions and the following
+  disclaimer in the documentation and/or other materials provided
+  with the distribution.
+* Neither the name of the Willow Garage nor the names of its
+  contributors may be used to endorse or promote products derived
+  from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.

@@ -1,0 +1,43 @@
+<launch>
+  <include file="$(find hsrb_description)/robots/upload_hsrb.launch" />
+  <test pkg="hsrb_moveit_plugins" test-name="hsrb_moveit_kinematics_test" type="hsrb_moveit_kinematics_test" time-limit="100.0">
+    <rosparam>
+
+    # 重みが8個設定されていない
+    test_fail_1:
+      kinematics_solver: test
+      kinematics_solver_weights: [1.0]
+
+    # 文字列が設定されている
+    test_fail_2:
+      kinematics_solver: test
+      kinematics_solver_weights: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "aa"]
+
+    # OK
+    test_success_1:
+      kinematics_solver: test
+      kinematics_solver_weights: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+    # OK
+    weight_test:
+      kinematics_solver: test
+      kinematics_solver_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+    robot_description_kinematics:
+
+      # 重みが8個設定されていない
+      test_fail_3:
+        kinematics_solver: test
+        kinematics_solver_weights: [1.0]
+
+      # 文字列が設定されている
+      test_fail_4:
+        kinematics_solver: test
+        kinematics_solver_weights: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "aa"]
+
+      # OK
+      test_success_2:
+        kinematics_solver: test
+        kinematics_solver_weights: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    </rosparam>
+  </test>
+</launch>

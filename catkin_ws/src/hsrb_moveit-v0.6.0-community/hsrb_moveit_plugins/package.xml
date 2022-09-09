@@ -1,0 +1,48 @@
+<package>
+  <name>hsrb_moveit_plugins</name>
+  <version>0.6.0</version>
+  <description>HSR specific plugins for MoveIt</description>
+  <maintainer email="koji_terada@mail.toyota.co.jp">Koji Terada</maintainer>
+  <author email="koji_terada@mail.toyota.co.jp">Koji Terada</author>
+  <license>HSR Software License for Community Software A</license>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>actionlib</build_depend>
+  <build_depend>cmake_modules</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>eigen_conversions</build_depend>
+  <build_depend>hsrb_analytic_ik</build_depend>
+  <build_depend>pluginlib</build_depend>
+  <build_depend>moveit_core</build_depend>
+  <build_depend>moveit_ros_planning</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>tmc_control_msgs</build_depend>
+  <build_depend>tmc_robot_kinematics_model</build_depend>
+
+  <run_depend>actionlib</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>cmake_modules</run_depend>
+  <run_depend>eigen_conversions</run_depend>
+  <run_depend>hsrb_analytic_ik</run_depend>
+  <run_depend>pluginlib</run_depend>
+  <run_depend>moveit_core</run_depend>
+  <run_depend>moveit_ros_planning</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>tmc_control_msgs</run_depend>
+  <run_depend>tmc_control_msgs</run_depend>
+  <run_depend>tmc_robot_kinematics_model</run_depend>
+
+  <test_depend>rostest</test_depend>
+  <test_depend>gtest</test_depend>
+  <test_depend>hsrb_description</test_depend>
+
+  <export>
+    <moveit_core plugin="${prefix}/hsrb_moveit_kinematics_plugin_description.xml"/>
+    <moveit_core plugin="${prefix}/hsrb_moveit_controller_manager_plugin_description.xml"/>
+  </export>
+
+</package>
