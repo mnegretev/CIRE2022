@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name='ycb_035_power_drill'>
+    <link name='body'>
+      <inertial>
+        <mass>0.784210691527</mass>
+        <pose>-0.0307146913476 0.0243508456459 0.0235676339867 0 0 0</pose>
+        <inertia>
+          <ixx>0.00312783331444</ixx>
+          <ixy>0.000322515585211</ixy>
+          <ixz>2.48303810838e-05</ixz>
+          <iyy>0.00127594392745</iyy>
+          <iyz>6.33016043853e-05</iyz>
+          <izz>0.00419047371226</izz>
+        </inertia>
+      </inertial>
+      <visual name='ycb_035_power_drill_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ycb_035_power_drill/meshes/textured.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='ycb_035_power_drill_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ycb_035_power_drill/meshes/nontextured.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name='ycb_077_rubiks_cube'>
+    <link name='body'>
+      <inertial>
+        <mass>0.246884377653</mass>
+        <pose>-0.0162190498434 -0.000485290597815 0.0285899281485 0 0 0</pose>
+        <inertia>
+          <ixx>0.000132908481819</ixx>
+          <ixy>1.48422051453e-07</ixy>
+          <ixz>-9.77040933618e-08</ixz>
+          <iyy>0.000132735795282</iyy>
+          <iyz>6.50678156769e-08</iyz>
+          <izz>0.000132657230166</izz>
+        </inertia>
+      </inertial>
+      <visual name='ycb_077_rubiks_cube_visual'>
+        <pose>0 0 0 0 0 0</pose>
+
+        <geometry>
+          <mesh>
+            <uri>model://ycb_077_rubiks_cube/meshes/textured.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='ycb_077_rubiks_cube_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ycb_077_rubiks_cube/meshes/nontextured.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+      </collision>
+    </link>
+   <static>1</static>
+  </model>
+</sdf>

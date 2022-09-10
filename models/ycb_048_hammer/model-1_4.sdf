@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name='ycb_048_hammer'>
+    <link name='body'>
+      <inertial>
+        <mass>0.349569585023</mass>
+        <pose>-0.0285708609099 -0.0126726731492 0.0156534840465 0 0 0</pose>
+        <inertia>
+          <ixx>0.00356169146589</ixx>
+          <ixy>0.00129473264632</ixy>
+          <ixz>9.34011418982e-06</ixz>
+          <iyy>0.000624208912093</iyy>
+          <iyz>-1.69438635021e-05</iyz>
+          <izz>0.00415482384393</izz>
+        </inertia>
+      </inertial>
+      <visual name='ycb_048_hammer_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ycb_048_hammer/meshes/textured.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name='ycb_048_hammer_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://ycb_048_hammer/meshes/nontextured.stl</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+      </collision>
+    </link>
+  </model>
+</sdf>
