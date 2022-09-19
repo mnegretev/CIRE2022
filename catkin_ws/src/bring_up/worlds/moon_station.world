@@ -1365,10 +1365,10 @@
       <pose>13.4547 -11.6639 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>2365 99000000</sim_time>
-      <real_time>68 297298446</real_time>
-      <wall_time>1662248411 832747720</wall_time>
-      <iterations>67999</iterations>
+      <sim_time>2280 462000000</sim_time>
+      <real_time>133 788869600</real_time>
+      <wall_time>1659136623 367537759</wall_time>
+      <iterations>129962</iterations>
       <model name='InstrumentCart1'>
         <pose>2.94314 3.76076 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -1377,56 +1377,6 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='beer'>
-        <pose>4.90394 -2.0568 -7e-06 -0 -0 -0.599583</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>4.90394 -2.0568 0.114993 -0 -0 -0.599583</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -3.822 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='beer_clone'>
-        <pose>5.18804 -1.80733 -2e-06 0 -0 0.403008</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>5.18804 -1.80733 0.114998 0 -0 0.403008</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -3.822 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='beer_clone_0'>
-        <pose>4.92994 -1.42291 -2e-06 0 -1e-06 0.799595</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>4.92994 -1.42291 0.114998 0 -1e-06 0.799595</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -3.822 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='beer_clone_1'>
-        <pose>5.3186 -2.27858 -2e-06 1e-06 -0 -1e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>5.3186 -2.27858 0.114998 1e-06 -0 -1e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -3.822 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='beer_clone_2'>
-        <pose>5.1257 -2.43166 -7e-06 0 -0 1.23378</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>5.1257 -2.43166 0.114993 0 -0 1.23378</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -3.822 0 -0 0</wrench>
         </link>
       </model>
       <model name='full_wall_55_6475_2090'>
@@ -1657,18 +1607,18 @@
         <link name='link'>
           <pose>-4.50651 4.10936 0.499995 0 1e-05 -0.008331</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.010668 0.006191 -9.78231 -0.01244 0.02133 -2.6e-05</acceleration>
-          <wrench>0.010668 0.006191 -9.78231 0 -0 0</wrench>
+          <acceleration>0.010555 -0.006195 -9.78232 0.012412 0.021107 1e-05</acceleration>
+          <wrench>0.010555 -0.006195 -9.78232 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_0'>
-        <pose>-4.66361 -1.5958 0.5 0 -0 -0.068173</pose>
+        <pose>-4.66361 -1.5958 0.5 0 0 -0.068173</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-4.66361 -1.5958 0.5 0 -0 -0.068173</pose>
+          <pose>-4.66361 -1.5958 0.5 0 0 -0.068173</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-1e-06 -0 -0 1e-06 -1e-06 0</acceleration>
-          <wrench>-1e-06 -0 -0 0 -0 0</wrench>
+          <acceleration>1e-06 0 0 -1e-06 1e-06 0</acceleration>
+          <wrench>1e-06 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_2'>
@@ -1677,45 +1627,45 @@
         <link name='link'>
           <pose>-0.068794 -10.6758 0.000268 1.4e-05 3e-06 0.91865</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-1.8e-05 9e-06 -8.1e-05 -0.031891 -0.067472 -0</acceleration>
+          <acceleration>-1.8e-05 9e-06 -8.1e-05 -0.031887 -0.067475 -0</acceleration>
           <wrench>-1.8e-05 9e-06 -8.1e-05 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_clone'>
-        <pose>-5.50698 4.0579 0.5 0 0 -0.001181</pose>
+        <pose>-5.50698 4.0579 0.5 -4e-06 0 -0.001181</pose>
         <scale>1 7.23607 1</scale>
         <link name='link'>
-          <pose>-5.50698 4.0579 0.5 0 0 -0.001181</pose>
+          <pose>-5.50698 4.0579 0.5 -4e-06 0 -0.001181</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 -0.000297 -0 0.000593 -1e-06 0</acceleration>
-          <wrench>-0 -0.000297 -0 0 -0 0</wrench>
+          <acceleration>-0 -0.000275 -0 0.000551 -1e-06 0</acceleration>
+          <wrench>-0 -0.000275 -0 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_clone_1'>
-        <pose>-1.17769 -3.71836 0.5 -2e-06 0 5e-06</pose>
+        <pose>-1.17769 -3.71836 0.5 -4e-06 -0 5e-06</pose>
         <scale>1 3.62631 1</scale>
         <link name='link'>
-          <pose>-1.17769 -3.71836 0.5 -2e-06 0 5e-06</pose>
+          <pose>-1.17769 -3.71836 0.5 -4e-06 -0 5e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 -0.009369 -1.5e-05 0.018737 -0 0</acceleration>
-          <wrench>0 -0.009369 -1.5e-05 0 -0 0</wrench>
+          <acceleration>0 -0.009357 -1.5e-05 0.018715 -0 0</acceleration>
+          <wrench>0 -0.009357 -1.5e-05 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_cylinder'>
-        <pose>2.14694 0.738304 0.175627 0 -0 2.7e-05</pose>
+        <pose>2.14694 0.738304 0.175618 0 -0 2.7e-05</pose>
         <scale>1 1 0.351255</scale>
         <link name='link'>
-          <pose>2.14694 0.738304 0.175627 0 -0 2.7e-05</pose>
+          <pose>2.14694 0.738304 0.175618 0 -0 2.7e-05</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_cylinder_0'>
-        <pose>1.98294 3.15713 0.130238 0 0 -0.02272</pose>
+        <pose>1.98294 3.15713 0.130229 -0 -0 -0.02272</pose>
         <scale>1 1 0.260477</scale>
         <link name='link'>
-          <pose>1.98294 3.15713 0.130238 0 0 -0.02272</pose>
+          <pose>1.98294 3.15713 0.130229 -0 -0 -0.02272</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
@@ -1737,7 +1687,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>2.35303 -1.07939 4.09128 0 0.911751 0.195625</pose>
+        <pose>-12.6011 -0.358088 17.3935 0 0.911751 0.195625</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -3730,291 +3680,6 @@
       </link>
       <static>1</static>
       <pose>-6.59382 1.28898 0 0 -0 1.55299</pose>
-    </model>
-    <model name='beer'>
-      <link name='link'>
-        <pose>0 0 0.115 0 -0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://beer/materials/scripts</uri>
-              <uri>model://beer/materials/textures</uri>
-              <name>Beer/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>4.90394 -2.0568 0 0 -0 0</pose>
-    </model>
-    <model name='beer_clone'>
-      <link name='link'>
-        <pose>0 0 0.115 0 -0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://beer/materials/scripts</uri>
-              <uri>model://beer/materials/textures</uri>
-              <name>Beer/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>5.18804 -1.80733 -8e-06 -1e-06 -0 -2e-06</pose>
-    </model>
-    <model name='beer_clone_0'>
-      <link name='link'>
-        <pose>0 0 0.115 0 -0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://beer/materials/scripts</uri>
-              <uri>model://beer/materials/textures</uri>
-              <name>Beer/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>4.92994 -1.42291 -8e-06 -1e-06 -0 -2e-06</pose>
-    </model>
-    <model name='beer_clone_1'>
-      <link name='link'>
-        <pose>0 0 0.115 0 -0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://beer/materials/scripts</uri>
-              <uri>model://beer/materials/textures</uri>
-              <name>Beer/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>5.3186 -2.64066 -8e-06 -1e-06 -0 -2e-06</pose>
-    </model>
-    <model name='beer_clone_2'>
-      <link name='link'>
-        <pose>0 0 0.115 0 -0 0</pose>
-        <inertial>
-          <mass>0.39</mass>
-          <inertia>
-            <ixx>0.00058</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.00058</iyy>
-            <iyz>0</iyz>
-            <izz>0.00019</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <cylinder>
-              <radius>0.055</radius>
-              <length>0.23</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://beer/materials/scripts</uri>
-              <uri>model://beer/materials/textures</uri>
-              <name>Beer/Diffuse</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose>5.1257 -2.43166 -8e-06 -1e-06 -0 -2e-06</pose>
     </model>
   </world>
 </sdf>
