@@ -46,7 +46,7 @@ def spawner():
     
     
 
-    num_objs=4
+    num_objs=2
     x_gaz,y_gaz= 0,1.21
     obj_ix=-1
 
@@ -60,7 +60,7 @@ def spawner():
 
 
 
-    num_objs=5
+    num_objs=2
     x_gaz,y_gaz= -3.0,4.0
     obj_ix=0
 
@@ -73,7 +73,7 @@ def spawner():
 
 
 
-    num_objs=6
+    num_objs=2
     x_gaz,y_gaz= 3.9,5.6
     obj_ix=1
 
