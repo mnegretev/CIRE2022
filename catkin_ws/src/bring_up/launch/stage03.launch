@@ -9,7 +9,7 @@
     <arg name="use_laser_odom" value="false" />
   </include>
   
-  <node pkg="publisher_meta_etapa2" name= "meta_publisher_node" type="meta_publisher.py" />
+<node pkg="publisher_meta_etapa2" name= "meta_publisher_node" type="obj_spawner.py" />
 
 
 <include file="$(find hsrb_moveit_config)/launch/hsrb_demo_with_controller.launch">
