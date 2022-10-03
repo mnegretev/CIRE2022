@@ -1,0 +1,6 @@
+float32 inflated_cells
+nav_msgs/OccupancyGrid map
+-----------------
+
+nav_msgs/OccupancyGrid inflated_map
+

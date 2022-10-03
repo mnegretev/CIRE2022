@@ -1,0 +1,1 @@
+/home/axel/FinderV3/catkin_ws/src/navigation/exploration/src/scripts/Prueba_Exploracion_Client.py

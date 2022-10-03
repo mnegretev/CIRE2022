@@ -1,0 +1,13 @@
+<launch>
+
+	<node pkg="exploration" type="inflated_map.py" name="inflated_map" respawn="false" output="screen"></node>
+
+	<node pkg="exploration" type="boundary_points.py" name="boundary_points" respawn="false" output="screen"></node>
+
+	<node pkg="exploration" type="clusters_k_means.py" name="clusters_k_means" respawn="false" output="screen"></node>
+
+	<node pkg="exploration" type="goal_point_selecter.py" name="goal_point_selecter" respawn="false" output="screen"></node>
+
+	<node pkg="exploration" type="move_pf.py" name="move_pf" respawn="false" output="screen"></node>
+
+</launch>
