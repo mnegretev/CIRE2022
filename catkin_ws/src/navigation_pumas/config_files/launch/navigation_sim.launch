@@ -4,8 +4,9 @@
   <node name="fake_global_pose" pkg="killer_node" type="fake_global_pose.py" output="screen"/>
 <node name="sensor_scan_fix" pkg="sensor_scan_fix" type="sensor_scan_fix.py" output="screen"/>
 
-  <arg name="static_map_file"  default="$(find tmc_wrs_gazebo_worlds)/maps/moon/map.yaml"/>
-  <arg name="prohibition_map_file"  default="$(find tmc_wrs_gazebo_worlds)/maps/moon/map.yaml"/>
+  <arg name="static_map_file"  default="$(find bring_up)/maps/moon_station.yaml" />
+
+  <arg name="prohibition_map_file"  default="$(find bring_up)/maps/moon_station.yaml"/>
 
 
 
@@ -94,8 +95,8 @@
 
   </node>
 
-  <node pkg="hmm_navigation"  name="pumas_nav_actionserver" type="pumas_nav_actionserver.py"/>
-  <!--node pkg="face_recog"  name="wave_recog_server" type="sos_service_waving.py"/-->
+  <!--node pkg="hmm_navigation"  name="pumas_nav_actionserver" type="pumas_nav_actionserver.py"/-->
+  
     
   
 </launch>
