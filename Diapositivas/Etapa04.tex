@@ -56,11 +56,11 @@
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{frametitle}{
   \leavevmode
-  \hbox{\begin{beamercolorbox}[wd=0.6\paperwidth,left]{frametitle}
+  \hbox{\begin{beamercolorbox}[wd=0.75\paperwidth,left]{frametitle}
     \usebeamerfont{frametitle}\insertframetitle
   \end{beamercolorbox}
-  \begin{beamercolorbox}[wd=0.4\paperwidth,center]{frametitle}
-    \usebeamerfont{frametitle}\small{\thesection . \insertsectionhead}
+  \begin{beamercolorbox}[wd=0.25\paperwidth,center]{frametitle}
+    \usebeamerfont{frametitle}\hfill\hspace*{5ex}\footnotesize{\insertsubsection}
   \end{beamercolorbox}  } }
 \setbeamertemplate{footline}{
   \leavevmode%
@@ -72,9 +72,14 @@
       \usebeamerfont{author in head/foot}\insertshorttitle
     \end{beamercolorbox}%
     \begin{beamercolorbox}[colsep=-0.5pt,wd=.33\paperwidth,ht=3ex,dp=1.5ex,right]{author in head/foot}%
-      \usebeamerfont{author in head/foot}\insertshortdate{} \hspace*{2em}\scriptsize{\insertframenumber{}}\hspace*{1ex}
+      \usebeamerfont{author in head/foot}\insertsection{}\hspace*{2em}\scriptsize{\insertframenumber{}}\hspace*{1ex}
     \end{beamercolorbox}
   }
+}
+\setbeamersize
+{
+    text margin left=0.25cm,
+    text margin right=0.25cm
 }
 
 \begin{document}
@@ -778,15 +783,138 @@ while numpy.linalg.norm(nabla) > tol*len(P) and steps < 100000:
   \textbf{Deadline: } 2022-09-27 al inicio de la clase. 
 \end{frame}
 
-\section{Control de posición}
+\section{Seguimiento de rutas}
 \begin{frame}\frametitle{Seguimiento de rutas}
+  Hasta el momento ya se tiene una representación del ambiente y una forma de planear rutas. Ahora falta diseñar las leyes de control que hagan que el robot se mueva por la ruta calculada. Este control se hará bajo los siguientes supuestos:
   \begin{itemize}
-  \item Control para el caso diferencial
-  \item Control para el caso omnidireccional
-  \item Mencionar control para el caso de un vehículo ackerman
+  \item Se conoce la posición del robot (más adelante se abodará el problema de la localización)
+  \item El modelo cinemático es suficiente para modelar el movimiento del robot 
+  \item Las dinámicas no modeladas (parte eléctrica y mecánica de los motores) son lo suficientemente rápidas para poder despreciarse
   \end{itemize}
 \end{frame}
 
+\begin{frame}\frametitle{Modelo cinemático}
+  Considere la base móvil omnidireccional de la figura con configuración $q=(x,y,\theta)$.
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/GoalPose.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      El modelo cinemático está dado por
+      \begin{eqnarray*} 
+        \dot{x} &=& v_x\cos\theta - v_y\sin\theta\label{eq:Kinematic1}\\         
+        \dot{y} &=& v_x\sin\theta + v_y\cos\theta\\ 
+        \dot{\theta} &=& \omega,\label{eq:Kinematic3}
+      \end{eqnarray*}
+    \end{column}
+  \end{columns}
+  \[\]
+  \begin{itemize}
+  \item $(v_x, v_y, \omega)$ se consideran como señales de control
+  \item Corresponden a las velocidades lineales frontal y lateral, y la velocidad angular, con respecto al robot.
+  \item La forma de convertir $(v_x, v_y, \omega)$ a velocidades de cada motor varía dependiendo del número de motores y de su posición. 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Control de posición}
+  \begin{itemize}
+  \item Las leyes de control se diseñarán considerando una base diferencial
+  \item Es mejor mover al robot así, pues lo sensores están generalmente al frente
+  \end{itemize}
+  Si se quiere alcanzar el punto meta $(x_g, y_g)$, las siguientes leyes de control siguientes permiten alcanzar dicho punto meta:
+  \begin{eqnarray*}
+  v_x    &=& v_{max}e^{-\frac{e_{\theta}^{2}}{\alpha}}\label{eq:Control11}\\
+  \omega &=& \omega_{max}\left(\frac{2}{1+e^{-\frac{e_{\theta}}{\beta}}}-1\right)\label{eq:Control12}
+  \end{eqnarray*}
+  con
+  \[e_{\theta} = \atantwo\left(y_g - y, x_g - x\right) - \theta\]
+  El error de ángulo $e_\theta$ debe estar siempre en el intervalo $(-\pi, \pi]$. Si la diferencia resulta en un valor fuera de este ángulo, se puede acotar mediante:
+  \[e_\theta \leftarrow \left(e_\theta + \pi\right)\% (2\pi) - \pi\]
+  donde \% denota el operador módulo (residuo). 
+\end{frame}
+
+\begin{frame}\frametitle{Control de posición}
+  \begin{itemize}
+  \item $v_{max}$ y $\omega_{max}$ son las veloicidades linear y angular máximas y dependen de las capacidades físicas del robot.
+  \item $\alpha$ y $\beta$ determinan qué tan rápido varían dichas velocidades cuando cambia el error de ángulo.
+  \item En general, valores pequeños de $\alpha$ y $\beta$ logran que el robot alcance el punto meta casi en línea recta, sin embargo, valores muy pequeños pueden producir oscilaciones.
+  \item Valores grandes de $\alpha$ y $\beta$ producen un movimiento más suave pero puede hacer que el robot describa curvas muy extensas. 
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{Figures/LinearSpeed.eps}
+    \includegraphics[width=0.45\textwidth]{Figures/AngularSpeed.eps}
+  \end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{Seguimiento de rutas}
+  \begin{itemize}
+  \item Hasta el momento se ha planteado cómo alcanzar una posición, pero, ¿para una ruta?
+  \item Las rutas son secuencias de puntos. Esta secuencia se prodría parametrizar con respecto al tiempo para tener una trayectoria, sin embargo esto resulta muy complicado debido a la complejidad de las rutas.
+  \item Una solución más sencilla es aplicar el control de posición para cada punto hasta recorrer toda la ruta.
+  \item Las leyes de control solo dependen de $e_\theta$ por lo que el robot no desacelera al acercarse a la meta, provocando fuertes oscilaciones.
+  \item Una forma de resolver este problema es ejecutar la ley de control sólo si la distancia al punto meta 
+
+    \[d=\sqrt{(x_g - x_r)^2 + (y_g - y_r)^2}\] 
+    
+    es mayor que una tolerancia $\epsilon$.
+  \item En este caso, el robot se detendrá abruptamente cuando el error de distancia sea menor que $\epsilon$, lo cual tampoco es deseable
+  \item Una forma fácil de hacer que el robot acelere y desacelere, o en general, obtener un perfil de velocidad, es mediante el uso de una máquina de estados
+    
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Perfil de velocidad}
+  \begin{columns}
+    \begin{column}{0.43\textwidth}
+      \includegraphics[width=\textwidth]{Figures/AFSM.pdf}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      Considere una máquina de estados que calcule $v_{max}$ en el control. Sea $v_{sm}$ la nueva velocidad lineal máxima, de modo que ahora se tiene:
+      \begin{eqnarray*}
+        v      &=& v_{sm}e^{-\frac{e_{\theta}^{2}}{\alpha}}\label{eq:NewControl1}\\
+        \omega &=& \omega_{max}\left(\frac{2}{1+e^{-\frac{e_{\theta}}{\beta}}}-1\right)\label{eq:NewControl2}
+      \end{eqnarray*}
+      con
+      \begin{itemize}
+      \item $r$: Distancia a la meta global
+      \item $\epsilon$: Distancia a la que se considera que el robot alcanzó la meta global
+      \item $r_d$: Distancia a la meta global para desacelerar
+      \item $\Delta v$: Aceleración 
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Perfil de velocidad}
+  La siguiente figura muestra un ejemplo de una ruta y las velocidades lineales generadas usando solo las leyes de control (izquierda) y usando la máquina de estados para un perfil de velocidad (derecha). 
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{Figures/SpeedProfilePath.png}
+  \end{figure}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{Figures/SpeedWithoutProfile.eps}
+    \includegraphics[width=0.45\textwidth]{Figures/SpeedWithProfile.eps}
+  \end{figure}
+\end{frame}
+
+\section{Evasión de obstáculos}
+\begin{frame}\frametitle{Evasión de obstáculos}
+  \begin{itemize}
+  \item Hasta el momento se tiene una manera de representar el ambiente, planear una ruta y seguirla
+  \item ¿Qué pasa si en el ambiente hay un obstáculo que no estaba en el mapa?
+  \item Se requiere de una técnica reactiva para evadir obstáculos
+  \item Una posible solución es el uso de campos potenciales artificiales
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Campos potenciales artificiales}
+  
+\end{frame}
 
 \bibliographystyle{abbrv}
 \bibliography{References}
