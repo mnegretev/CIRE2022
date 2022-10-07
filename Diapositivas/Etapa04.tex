@@ -262,20 +262,20 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}\frametitle{Mínimos cuadrados}
-  Este método busca minimizar las distancias entre los puntos $(x_i,y_i)$ y la recta en forma normal dada por los parámetros $(\rho, \theta)$.
-  \[\]
-  Dado un conjunto de puntos $(x_i, y_i)$, la recta $(\rho,\theta)$ que mejor se ajusta se puede obtener con:
-  \begin{eqnarray*}
-    \theta &=& \frac{1}{2}\atantwo\left(-2\sum_i (\bar{x} - x_i)(\bar{y}-y_i)\quad,\quad \sum_i\left[(\bar{y} - y_i)^2 - (\bar{x} - x_i)^2\right]\right)\\
-    \rho &=& \bar{x}\cos\theta + \bar{y}\sin\theta
-  \end{eqnarray*}
-  con
-  \begin{eqnarray*}
-    \bar{x} &=& \frac{1}{n}\sum_i x_i\\
-    \bar{y} &=& \frac{1}{n}\sum_i y_i
-  \end{eqnarray*}
-\end{frame}
+% \begin{frame}\frametitle{Mínimos cuadrados}
+%   Este método busca minimizar las distancias entre los puntos $(x_i,y_i)$ y la recta en forma normal dada por los parámetros $(\rho, \theta)$.
+%   \[\]
+%   Dado un conjunto de puntos $(x_i, y_i)$, la recta $(\rho,\theta)$ que mejor se ajusta se puede obtener con:
+%   \begin{eqnarray*}
+%     \theta &=& \frac{1}{2}\atantwo\left(-2\sum_i (\bar{x} - x_i)(\bar{y}-y_i)\quad,\quad \sum_i\left[(\bar{y} - y_i)^2 - (\bar{x} - x_i)^2\right]\right)\\
+%     \rho &=& \bar{x}\cos\theta + \bar{y}\sin\theta
+%   \end{eqnarray*}
+%   con
+%   \begin{eqnarray*}
+%     \bar{x} &=& \frac{1}{n}\sum_i x_i\\
+%     \bar{y} &=& \frac{1}{n}\sum_i y_i
+%   \end{eqnarray*}
+% \end{frame}
 
 \begin{frame}\frametitle{Diagrama de Voronoi Generalizado}
   \begin{itemize}
@@ -346,6 +346,20 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 1 - Inflado de mapas}
+  Ejecute los siguientes comandos para instalar lo necesario para esta sesión:
+  \begin{verbatim}
+ $ sudo apt update
+ $ sudo apt install ros-noetic-map-server ros-noetic-amcl 
+ $ sudo apt install ros-noetic-tf2-bullet ros-noetic-gmapping
+\end{verbatim}
+  Actualice y compile el repositorio:
+  \begin{verbatim}
+ $ cd ~/CIRE2022/catkin_ws
+ $ git pull
+ $ catkin_make -j2 -l2
+\end{verbatim}
+\end{frame}
 
 \begin{frame}[containsverbatim]\frametitle{Ejercicio 1 - Inflado de mapas}
   \begin{enumerate}
@@ -762,10 +776,10 @@ El descenso del gradiente devuelve el mínimo local más cercano a la condición
 \end{algorithm}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Práctica 4 - Suavizado de rutas}
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 3 - Suavizado de rutas}
   Realice lo siguiente:
   \begin{enumerate}
-     \item Abra el archivo \texttt{catkin\_ws/src/students/scripts/practice04.py} y agregue el siguiente código en la línea 39:
+     \item Abra el archivo \texttt{catkin\_ws/src/exercises/scripts/path\_smoothing.py} y agregue el siguiente código en la línea 39:
   \begin{lstlisting}[language=Python,firstnumber=39]
 nabla[0], nabla[-1] = 0, 0
 while numpy.linalg.norm(nabla) > tol*len(P) and steps < 100000:
@@ -774,26 +788,15 @@ while numpy.linalg.norm(nabla) > tol*len(P) and steps < 100000:
     P = P - epsilon*nabla
     steps += 1
   \end{lstlisting}
-  \item Corra los nodos de inflado de mapas, mapa de costo, A* y suavizado de rutas (practice02.py, practice03a.py, practice03b.py y practice04.py)
-  \item Mediante la GUI, modifique los parámetros $\alpha$ y $\beta$ del suavizado y observe qué sucede con el cálculo de rutas.
+  \item Corra los nodos de inflado de mapas, mapa de costo, A* y suavizado de rutas. 
+  \item Modifique los parámetros $\alpha$ y $\beta$ mediante los comandos:\\
+    \texttt{rosparam set /path\_planning/smoothing\_alpha 0.95}\\
+    \texttt{rosparam set /path\_planning/smoothing\_beta 0.05}
+  \item Calcule una ruta a un punto meta mediante el comando:\\
+    \texttt{rosservice call /path\_planning/a\_star\_search}\\
+    (Autocomplete el comando y utilice los campos \textit{goal-pose-position-x} y \textit{goal-pose-position-y}
+  \item Observe qué sucede. 
   \end{enumerate}
-\end{frame}
-
-\begin{frame}[containsverbatim]\frametitle{Práctica 4 - Suavizado de rutas}
- \textbf{Entregables:}
-  \begin{itemize}
-  \item Código modificado en la rama correspondiente del repositorio en línea.
-  \item Documento escrito con los siguientes puntos:
-    \begin{itemize}
-    \item Introducción (el problema del suavizado de rutas y el algoritmo del descenso del gradiente)
-    \item Objetivo: Implementar el descenso del gradiente para suavizar una ruta calculada con A*
-    \item Descripción del descenso del gradiente
-    \item Resultados del inciso anterior 
-    \item Conclusiones
-    \item Referencias
-    \end{itemize}
-  \end{itemize}
-  \textbf{Deadline: } 2022-09-27 al inicio de la clase. 
 \end{frame}
 
 \section{Seguimiento de rutas}
@@ -915,19 +918,15 @@ while numpy.linalg.norm(nabla) > tol*len(P) and steps < 100000:
   \end{figure}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Práctica 5 - Seguimiento de rutas}
-  \begin{itemize}
-  \item Código modificado en la rama correspondiente del repositorio en línea.
-  \item Documento escrito con los siguientes puntos:
-    \begin{itemize}
-    \item Introducción (el problema del suavizado de rutas y el algoritmo del descenso del gradiente)
-    \item Objetivo: Implementar el descenso del gradiente para suavizar una ruta calculada con A*
-    \item Descripción del descenso del gradiente
-    \item Resultados del inciso anterior 
-    \item Conclusiones
-    \item Referencias
-    \end{itemize}
-  \end{itemize}
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 4 - Seguimiento de rutas}
+Realice lo siguiente:
+  \begin{enumerate}
+     \item Inspeccione el archivo \texttt{catkin\_ws/src/exercises/scripts/path\_following.py} e identifique las leyes de control. 
+  \item Ejecute la simulación con el comando \texttt{roslaunch bring\_up stage04.launch}
+  \item Ejecute todos los ejercicios anteriores (inflado de obstáculos, mapa de costo, suavizado, algoritmo A* y seguimiento de rutas) mediante el comando\\ \texttt{roslaunch bring\_up stage04\_path\_planning.launch}
+  \item Con la opción \textit{2D Nav Goal} del visualizador \textit{RViz}, selecccione un punto meta en el mapa.
+  \item Observe qué sucede. 
+  \end{enumerate}
 \end{frame}
 
 
@@ -1026,21 +1025,15 @@ $q \leftarrow q_s$\;
   \end{figure}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Práctica 6 - Evasión de obstáculos}
- \textbf{Entregables:}
-  \begin{itemize}
-  \item Código modificado en la rama correspondiente del repositorio en línea.
-  \item Documento escrito con los siguientes puntos:
-    \begin{itemize}
-    \item Introducción (el problema del suavizado de rutas y el algoritmo del descenso del gradiente)
-    \item Objetivo: Implementar el descenso del gradiente para suavizar una ruta calculada con A*
-    \item Descripción del descenso del gradiente
-    \item Resultados del inciso anterior 
-    \item Conclusiones
-    \item Referencias
-    \end{itemize}
-  \end{itemize}
-  \textbf{Deadline: } 2022-09-27 al inicio de la clase. 
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 5 - Evasión de obstáculos}
+Realice lo siguiente:
+  \begin{enumerate}
+     \item Inspeccione el archivo \texttt{catkin\_ws/src/exercises/scripts/pot\_fields.py} e identifique el cálculo de las fuerzas atractiva y repulsiva así como el algoritmo de descenso del gradiente.  
+  \item Ejecute la simulación con el comando \texttt{roslaunch bring\_up stage04.launch}
+  \item Ejecute la evasión por campos potenciales mediante el comando\\ \texttt{rosrun exercises pot\_fields.py}
+  \item Con la opción \textit{2D Nav Goal} del visualizador \textit{RViz}, selecccione un punto meta en el mapa.
+  \item Observe qué sucede. 
+  \end{enumerate}
 \end{frame}
 
 \section{Localización}
@@ -1082,34 +1075,72 @@ $q \leftarrow q_s$\;
   \end{enumerate}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Práctica 7 - Localización}
- \textbf{Entregables:}
-  \begin{itemize}
-  \item Código modificado en la rama correspondiente del repositorio en línea.
-  \item Documento escrito con los siguientes puntos:
-    \begin{itemize}
-    \item Introducción (el problema del suavizado de rutas y el algoritmo del descenso del gradiente)
-    \item Objetivo: Implementar el descenso del gradiente para suavizar una ruta calculada con A*
-    \item Descripción del descenso del gradiente
-    \item Resultados del inciso anterior 
-    \item Conclusiones
-    \item Referencias
-    \end{itemize}
-  \end{itemize}
-  \textbf{Deadline: } 2022-09-27 al inicio de la clase. 
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 6 - Filtro de partículas}
+Realice lo siguiente:
+  \begin{enumerate}
+  \item Inspeccione el archivo \texttt{catkin\_ws/src/exercises/src/particle\_filter.cpp} e identifique los diferentes pasos del filtro de partículas.  
+  \item Ejecute la simulación con el comando \texttt{roslaunch bring\_up stage04\_localization.launch}
+  \item Note que ahora el robot no aparece en el visualizador \textit{RViz}. Esto debido a que aún no hay un nodo que localice al robot. 
+  \item Ejecute el filtro de partículas mediante el comando\\ \texttt{rosrun exercises particle\_filter}
+  \item Mueva al robot publicando el tópico \texttt{/hsrb/command\_velocity} mediante el comando:\\
+    \texttt{rostopic pub /hsrb/command\_velocity geometry\_msgs/Twist }\\
+    Utilice el autocompletado para asignar velocidades lineal y/o angular. 
+  \item Observe qué sucede. 
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}\frametitle{Localización y mapeo simultáneos}
-  
+  \begin{itemize}
+  \item  El problema del Mapeo y Localización Simultáneos se puede resolver con enfoques similares al problema de la localización.
+  \item Ahora, el estado a estimar ya no es solo la configuración del robot, sino que la posición de cada obstáculo es un estado a estimar.
+  \item Existen varios paquetes de ROS que ya realizan esta tarea.
+  \item Lo sentimos, el tiempo es insuficiente para revisar este tema. :'(
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 7 - SLAM}
+Realice lo siguiente:
+  \begin{enumerate}
+  \item Ejecute la simulación con el comando \texttt{roslaunch bring\_up stage04\_mapping.launch}
+  \item Note que ahora en el visualizador \textit{RViz} aparece un mapa incompleto. 
+  \item Mueva al robot publicando el tópico \texttt{/hsrb/command\_velocity} mediante el comando:\\
+    \texttt{rostopic pub /hsrb/command\_velocity geometry\_msgs/Twist }\\
+    Utilice el autocompletado para asignar velocidades lineal y/o angular. 
+  \item Observe qué sucede. 
+  \end{enumerate}
 \end{frame}
 
 \section{Misión Etapa 4}
 \begin{frame}\frametitle{Su misión, si deciden aceptarla...}
-  
+  Desarrollar un algoritmo para que el robot navegue por el ambiente simulado mientras realiza un mapa. 
+  \begin{itemize}
+  \item La posición de inicio puede variar, por lo que el mapa puede quedar con un \textit{cero} diferente.
+  \item El robot debe explorar el ambiente de manera autónoma para construir el mapa.
+  \item El robot debe evitar chocar con cualquier objeto.
+  \item Al terminar de explorar, el robot debe regresar al punto de inicio (navegar al punto (0,0)).
+  \item Todo debe ejecutarse con un solo archivo \texttt{*.launch}
+  \end{itemize}
+  Algunos criterios:
+  \begin{enumerate}
+  \item Número de colisiones (se penalizará cada colisión)
+  \item Parecido del mapa con el ambiente
+  \item Tiempo de ejecución
+  \item Que el robot regrese al punto de inicio
+  \end{enumerate}
+  Entregables:
+  \begin{itemize}
+  \item Códigos fuente
+  \item Mapa generado 
+  \end{itemize}
 \end{frame}
 
 \begin{frame}\frametitle{Para más información...}
-  
+  \begin{itemize}
+  \item Libro \textit{Handbook of Robotics}. \url{https://link.springer.com/book/10.1007/978-3-319-32552-1}
+  \item Libro \textit{Principles of robot motion}. \url{https://mitpress.mit.edu/9780262033275/principles-of-robot-motion/}
+  \item \textit{Navigation Stack} de ROS \url{http://wiki.ros.org/navigation}
+  \item \textit{Navigation Stack} de ROS2 \url{https://navigation.ros.org/}
+  \end{itemize}
 \end{frame}
 
 \bibliographystyle{abbrv}
