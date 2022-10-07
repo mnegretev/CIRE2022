@@ -16,7 +16,7 @@ from nav_msgs.srv import GetMap
 from nav_msgs.srv import GetMapResponse
 from nav_msgs.srv import GetMapRequest
 
-NAME = "FULL_NAME"
+NAME = "NOMBRE DEL EQUIPO"
 
 def get_inflated_map(static_map, inflation_cells):
     print("Inflating map by " + str(inflation_cells) + " cells")
@@ -29,7 +29,13 @@ def get_inflated_map(static_map, inflation_cells):
     # El mapa esta dado en 'static_map' como un arreglo bidimensional de numpy
     # Considere como celdas ocupadas todas las celdas con un valor de ocupacion mayor que 50
     #
-    
+    for i in range(height):
+        for j in range(width):
+            if static_map[i,j] > 50:
+                for k1 in range(-inflation_cells, inflation_cells+1):
+                    for k2 in range(-inflation_cells, inflation_cells+1):
+                        inflated[i+k1, j+k2] = 100
+                         
     return inflated
 
 def callback_inflated_map(req):
@@ -38,7 +44,7 @@ def callback_inflated_map(req):
 
 def main():
     global cost_map, inflated_map
-    print("EJERCICIO 1 - " + NAME)
+    print("EJERCICIO 1 - INFLADO DE OBSTACULOS" + NAME)
     rospy.init_node("map_inflation")
     rospy.wait_for_service('/static_map')
     pub_map  = rospy.Publisher("/inflated_map", OccupancyGrid, queue_size=10)

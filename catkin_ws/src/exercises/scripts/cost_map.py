@@ -16,7 +16,7 @@ from nav_msgs.srv import GetMap
 from nav_msgs.srv import GetMapResponse
 from nav_msgs.srv import GetMapRequest
 
-NAME = "FULL_NAME"
+NAME = "NOMBRE DEL EQUIPO"
 
 def get_cost_map(static_map, cost_radius):
     if cost_radius > 20:
@@ -59,7 +59,7 @@ def callback_cost_map(req):
     
 def main():
     global cost_map, inflated_map
-    print("EJERCICIO 2 - " + NAME)
+    print("EJERCICIO 2 - MAPA DE COSTO" + NAME)
     rospy.init_node("cost_maps")
     rospy.wait_for_service('/static_map')
     grid_map = rospy.ServiceProxy("/static_map", GetMap)().map

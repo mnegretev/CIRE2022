@@ -1,0 +1,23 @@
+float64 x
+float64 y
+float64 z
+float64 roll
+float64 pitch
+float64 yaw
+---
+float64 q1
+float64 q2
+float64 q3
+float64 q4
+float64 q5
+float64 q6
+float64 q7
+
+#Cartesian pose represents a position in a 6DOF space,
+#neverthless, arm is 7DOF. The IK algorithm is supossed to calculate the best elbow position
+#for the given cartesian pose.
+
+#Result is ArmConfiguration (seven floats) representing the angular position for each motor in the arm.
+
+#If goal pose is out of the workspace, a false should be returned when service is called.
+#Reachability of a given position can be determined by trying to calculate its inverse kinematics

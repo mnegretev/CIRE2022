@@ -18,7 +18,7 @@ from nav_msgs.msg import Path
 from nav_msgs.srv import *
 from collections import deque
 
-NAME = "APELLIDO_PATERNO_APELLIDO_MATERNO"
+NAME = "NOMBRE DEL EQUIPO"
 
 msg_path = Path()
 
@@ -126,7 +126,7 @@ def callback_a_star(req):
     return GetPlanResponse(msg_path)
 
 def main():
-    print("EJERCICIO 3 - A* - " + NAME)
+    print("EJERCICIO 2 - ALGORITMO A* - " + NAME)
     rospy.init_node("a_star_planning")
     rospy.wait_for_service('/static_map')
     rospy.Service('/path_planning/a_star_search'  , GetPlan, callback_a_star)
