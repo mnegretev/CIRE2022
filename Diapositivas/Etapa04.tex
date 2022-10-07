@@ -348,7 +348,8 @@
 
 
 \begin{frame}[containsverbatim]\frametitle{Ejercicio 1 - Inflado de mapas}
-    \begin{enumerate}
+  \begin{enumerate}
+    \item Corra la simulación mediante el comando \texttt{roslaunch bring\_up stage04.launch}
     \item Abra el archivo \texttt{catkin\_ws/src/exercises/scripts/map\_inflation.py} y agregue el siguiente código en la línea 32:
     \begin{lstlisting}[language=Python,firstnumber=32]
  for i in range(height):
@@ -635,9 +636,10 @@
   \end{table}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Ejercicio 3 - Planeación de rutas}
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 2 - Planeación de rutas}
   Realice lo siguiente:
   \begin{enumerate}
+    \item Corra la simulación mediante el comando \texttt{roslaunch bring\_up stage04.launch}
   \item Corra los nodos de inflado de mapas, mapa de costo y A* (\texttt{map\_inflation.py}, \texttt{cost\_map.py} y \texttt{a\_star.py}). 
   \item Modifique el radio de costo mediante el comando:\\
     \texttt{rosparam set /path\_planning/cost\_radius 0.4}
