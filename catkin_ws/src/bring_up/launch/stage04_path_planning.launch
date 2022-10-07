@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="map_inflation" pkg="exercises" type="map_inflation.py" output="screen"/>
+  <node name="cost_map" pkg="exercises" type="cost_map.py" output="screen"/>
+  <node name="a_star_planning" pkg="exercises" type="a_star.py" output="screen"/>
+  <node name="path_smoothing" pkg="exercises" type="path_smoothing.py" output="screen"/>
+  <node name="path_following" pkg="exercises" type="path_following.py" output="screen"/>
+</launch>
+

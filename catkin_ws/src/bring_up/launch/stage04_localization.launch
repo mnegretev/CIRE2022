@@ -23,10 +23,5 @@
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bring_up)/rviz/navigation.rviz"/>
   <node name="map_server" pkg="map_server" type="map_server" output="screen" args="$(find bring_up)/maps/moon_station.yaml"/>
-  <node name="amcl" pkg="amcl" type="amcl" output="screen" args="scan:=/hsrb/base_scan">
-    <param name="initial_pose_x" value="0.0"/>
-    <param name="initial_pose_y" value="0.0"/>
-    <param name="initial_pose_a" value="0.0"/>
-  </node>
 </launch>
 
