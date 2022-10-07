@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+  <rosparam param="/path_planning/inflation_radius">0.2</rosparam>
+  <rosparam param="/path_planning/cost_radius">0.2</rosparam>
+  
+  <arg name="robot_name" default="$(optenv ROBOT_NAME hsrb)"/>
+  <include file="$(find hsrb_gazebo_launch)/launch/include/hsrb_gazebo_common.xml" pass_all_args="true" >
+    <arg name="map" value="$(find bring_up)/maps/moon_station.yaml" />
+    <arg name="world_name" value="$(find bring_up)/worlds/moon_station.world"/>
+    <arg name="robot_pos" value="-x 0 -y 0 -z 0 -Y 0" />
+    <arg name="use_laser_odom" value="false" />
+    <arg name="use_manipulation" value="false" />
+    <arg name="use_navigation" value="false" />
+    <arg name="use_perception" value="false" />
+    <arg name="use_task" value="false" />
+    <arg name="use_teleop" value="false" />
+    <arg name="use_web" value="false" />
+    <arg name="use_laser_odom" value="false" />
+    <arg name="rviz" value="false"/>
+  </include>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bring_up)/rviz/navigation.rviz"/>
+  <node name="map_server" pkg="map_server" type="map_server" output="screen" args="$(find bring_up)/maps/moon_station.yaml"/>
+  <node name="amcl" pkg="amcl" type="amcl" output="screen" args="scan:=/hsrb/base_scan">
+    <param name="initial_pose_x" value="0.0"/>
+    <param name="initial_pose_y" value="0.0"/>
+    <param name="initial_pose_a" value="0.0"/>
+  </node>
+</launch>
+

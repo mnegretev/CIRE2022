@@ -347,33 +347,24 @@
 \end{frame}
 
 
-\begin{frame}\frametitle{Práctica 2 - Representación del ambiente}
-  \begin{enumerate}
-  \item Investigar los siguientes conceptos:
-    \begin{itemize}
-    \item Mapa geométrico vs mapa topológicos
-    \item Celdas de ocupación y celdas de elevación
-    \item Diagrama de Voronoi y Diagrama de Voronoi Generalizado
-    \end{itemize}
-  \item Completar el código del inflado de mapas
-  \item Modificar el radio de inflado. ¿Qué pasa si es muy grande?
-  \item Modificar los parámetros del algoritmo split and merge
-  \item Modificar la función de distancia para el cálculo del GVD, ¿qué pasa cuando se cambia a distacia de Manhattan?
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 1 - Inflado de mapas}
+    \begin{enumerate}
+    \item Abra el archivo \texttt{catkin\_ws/src/exercises/scripts/map\_inflation.py} y agregue el siguiente código en la línea 32:
+    \begin{lstlisting}[language=Python,firstnumber=32]
+ for i in range(height):
+   for j in range(width):
+       if static_map[i,j] > 50:
+           for k1 in range(-inflation_cells, inflation_cells+1):
+               for k2 in range(-inflation_cells, inflation_cells+1):
+                   inflated[i+k1, j+k2] = 100
+    \end{lstlisting}
+  \item Modifique radio de inflado mediante el comando:
+    \[\]
+    \texttt{rosparam set /path\_planning/inflation\_radius 0.4}
+    \[\]
+  \item ¿Qué cambios observa?
   \end{enumerate}
-  \textbf{Entregables:}
-  \begin{itemize}
-  \item Código modificado para el inflado de mapas en la rama correspondiente del repositorio en línea.
-  \item Documento escrito con los siguientes puntos:
-    \begin{itemize}
-    \item Introducción (el problema de la representación del ambiente, mapas, etc)
-    \item Objetivo: Implementar diversos algoritmos para la representación del ambiente
-    \item Descripción de cada algoritmo
-    \item Capturas de pantalla con los resultados del inciso anterior
-    \item Conclusiones
-    \item Referencias
-    \end{itemize}
-  \end{itemize}
-  \textbf{Deadline: } 2022-09-13 al inicio de la clase. 
+
 \end{frame}
 
 \section{Planeación de rutas}
@@ -523,20 +514,6 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Tarea 3 - Estructuras \textit{Heap} y \textit{Priority Queue}}
-  Realice lo siguiente:
-  \begin{enumerate}
-  \item Investigar qué es una cola con prioridad y qué aplicaciones tiene. 
-  \item Investigar qué es una estructura de tipo Heap y qué aplicaciones tiene. 
-  \end{enumerate}
-  \textbf{Entregables:}
-  \begin{itemize}
-  \item Documento escrito con los puntos anteriores. 
-  \end{itemize}
-  \textbf{Deadline: } 2022-09-08 al inicio de la clase. 
-\end{frame}
-
-
 \begin{frame}\frametitle{El algoritmo A*}
   \begin{itemize}
   \item Es un algoritmo completo, es decir, si la ruta existe, seguro la encontrará, y si no existe, lo indicará en tiempo finito.
@@ -658,42 +635,18 @@
   \end{table}
 \end{frame}
 
-\begin{frame}[containsverbatim]\frametitle{Práctica 3 - Planeación de rutas}
+\begin{frame}[containsverbatim]\frametitle{Ejercicio 3 - Planeación de rutas}
   Realice lo siguiente:
   \begin{enumerate}
-     \item Abra el archivo \texttt{catkin\_ws/src/students/scripts/practice03a.py} y agregue el siguiente código en la línea 45:
-  \begin{lstlisting}[language=Python,firstnumber=45]
-for i in range(height):
-    for j in range(width):
-        if static_map[i,j] > 50:
-            for k1 in range(-cost_radius, cost_radius+1):
-                for k2 in range(-cost_radius, cost_radius+1):
-                    cost = cost_radius - max(abs(k1),abs(k2)) + 1
-                    cost_map[i+k1,j+k2] = max(cost, cost_map[i+k1,j+k2])
-  \end{lstlisting}
-  \item Corra los nodos de inflado de mapas, mapa de costo y A* (practice02.py, practice03a.py y practice03b.py)
-  \item Mediante la GUI, modifique el radio de inflado entre 0.1 y 1 m y vea qué sucede con el cálculo de rutas.
-  \item Mediante la GUI, modifique el radio de costo entre 0.05 y 0.5 m y vea qué sucede con las rutas. 
-  \item Cambie la función de distancia de Manhattan por distancia Euclideana, y cambie la conectividad 4 por conectividad 8 y vea qué sucede.
-  \item modifique el código para que h sea siempre cero y vea qué sucede con el número de pasos. Pruebe con varias rutas. 
+  \item Corra los nodos de inflado de mapas, mapa de costo y A* (\texttt{map\_inflation.py}, \texttt{cost\_map.py} y \texttt{a\_star.py}). 
+  \item Modifique el radio de costo mediante el comando:\\
+    \texttt{rosparam set /path\_planning/cost\_radius 0.4}
+  \item Calcule una ruta a un punto meta mediante el comando:\\
+    \texttt{rosservice call /path\_planning/a\_star\_search}\\
+    (Autocomplete el comando y utilice los campos \textit{goal->pose->position->x} y \textit{goal->pose->position->y}
+  \item En el archivo \texttt{a\_star.py}, cambie la función de distancia de Manhattan por distancia Euclideana, y cambie la conectividad 4 por conectividad 8 y vea qué sucede.
+  \item Modifique el código para que $h$ sea siempre cero y vea qué sucede con el número de pasos. Pruebe con varias rutas. 
   \end{enumerate}
-\end{frame}
-
-\begin{frame}\frametitle{Práctica 3 - Planeación de rutas}
-  \textbf{Entregables:}
-  \begin{itemize}
-  \item Código modificado en la rama correspondiente del repositorio en línea.
-  \item Documento escrito con los siguientes puntos:
-    \begin{itemize}
-    \item Introducción (el problema de la planeación de rutas)
-    \item Objetivo: Implementar y comparar diversos algoritmos para planeación de rutas
-    \item Descripción de los algoritmos Dijkstra y A*
-    \item Resultados del inciso anterior 
-    \item Conclusiones
-    \item Referencias
-    \end{itemize}
-  \end{itemize}
-  \textbf{Deadline: } 2022-09-20 al inicio de la clase. 
 \end{frame}
 
 
@@ -747,6 +700,64 @@ for i in range(height):
       \end{itemize}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Suavizado mediante descenso del gradiente}
+  \begin{itemize}
+  \item Una forma de encontrar el mínimo es resolviendo $\nabla J(p) = 0$, y luego evaluando la matriz Hessiana para determinar si el punto crítico $p_c$ es un mínimo.
+  \item Esto se puede complicar debido al alto número de variables en $p$.
+  \item Una forma más sencilla, es mediante el descenso del gradiente.
+  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+  \begin{algorithm}[H]
+    \footnotesize
+  \DontPrintSemicolon
+  \KwData {Función $J(p):\mathbb{R}^n\rightarrow \mathbb{R}$ a minimizar}
+  \KwResult{Vector $p$ que minimiza la función $J$}
+  $p\leftarrow p_{init}$ //Fijar una estimación inicial\;
+  \While{$|\nabla J(p)| > tol$}
+  {
+    $p \leftarrow p - \epsilon \nabla J (p)$ //$p$ se modifica un poco en sentido contrario al gradiente.\;
+  }
+  Devolver $p$
+  \caption{Descenso del gradiente}
+\end{algorithm}
+\end{column}
+\end{columns}
+\[\]
+El descenso del gradiente devuelve el mínimo local más cercano a la condición inicial $p_0$. Pero la función de costo $J$ tiene solo un mínimo global. El gradiente de la función de costo $J$ se calcula como:
+  \[\underbrace{\left[\frac{}{}\alpha(p_0 - p_1)+\beta(p_0 - q_0)\right. }_{\dfrac{\partial J}{\partial p_0}}
+,\dots ,
+\underbrace{\frac{}{}\alpha(2p_i - p_{i-1} - p_{i+1})+\beta(p_i - q_i)}_{\dfrac{\partial J}{\partial p_i}}
+,\dots ,
+\underbrace{\left.\alpha(p_{n-1} - p_{n-2})+\beta(p_{n-1}-q_{n-1})\frac{}{}\right]}_{\dfrac{\partial J}{\partial p_{n-1}}}
+\]
+\end{frame}
+
+\begin{frame}\frametitle{Suavizado mediante descenso del gradiente}
+  
+  Para no variar los puntos inicial y final de la ruta, la primer y última componentes de $\nabla J$ se dejarán en cero. El algoritmo de descenso del gradiente queda como:
+  \[\]
+\begin{algorithm}[H]
+\DontPrintSemicolon
+  \DontPrintSemicolon
+  \KwData{Conjunto de puntos $Q = \{q_0\dots q_i \dots q_{n-1}\}$ de la ruta original, parámetros $\alpha$ y $\beta$, ganancia $\epsilon$ y tolerancia $tol$\;}
+  \KwResult{Conjunto de puntos $P = \{p_0\dots p_i \dots p_{n-1}\}$ de la ruta suavizada\;}
+  $P \leftarrow Q$\;
+  $\nabla J_0 \leftarrow 0$\;
+  $\nabla J_{n-1} \leftarrow 0$\;   
+  \While{ $\Vert\nabla J(p_i)\Vert > tol$}
+  {
+    \ForEach{$i \in [1,n-1)$}
+    {
+      $\nabla J_i \leftarrow \alpha (2p_i - p_{i-1} - p_{i+1}) + \beta (p_i - q_i)$\;
+    }
+    $P \leftarrow P - \epsilon \nabla J$
+  }
+  regresar $P$
+  \caption{Suavizado de rutas mediante descenso del gradiente}
+\end{algorithm}
 \end{frame}
 
 \begin{frame}[containsverbatim]\frametitle{Práctica 4 - Suavizado de rutas}
@@ -902,6 +913,22 @@ while numpy.linalg.norm(nabla) > tol*len(P) and steps < 100000:
   \end{figure}
 \end{frame}
 
+\begin{frame}[containsverbatim]\frametitle{Práctica 5 - Seguimiento de rutas}
+  \begin{itemize}
+  \item Código modificado en la rama correspondiente del repositorio en línea.
+  \item Documento escrito con los siguientes puntos:
+    \begin{itemize}
+    \item Introducción (el problema del suavizado de rutas y el algoritmo del descenso del gradiente)
+    \item Objetivo: Implementar el descenso del gradiente para suavizar una ruta calculada con A*
+    \item Descripción del descenso del gradiente
+    \item Resultados del inciso anterior 
+    \item Conclusiones
+    \item Referencias
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
 \section{Evasión de obstáculos}
 \begin{frame}\frametitle{Evasión de obstáculos}
   \begin{itemize}
@@ -913,6 +940,173 @@ while numpy.linalg.norm(nabla) > tol*len(P) and steps < 100000:
 \end{frame}
 
 \begin{frame}\frametitle{Campos potenciales artificiales}
+  El objetivo de esta técnica es diseñar una función $U(q):\mathbb{R}^n\rightarrow \mathbb{R}$ que represente energía potencial.
+  \begin{itemize}
+  \item El gradiente $\nabla U(q) = \left[\frac{\partial U}{\partial q_1},\dots,\frac{\partial U}{\partial q_n}\right]$ es una fuerza.
+  \item Se debe diseñar de modo que tenga un mínimo global en el punto meta y máximos locales en cada obstáculo.
+  \item Si el robot se mueve siempre en sentido contrario al gradiente $\nabla U$ llegará al punto meta siguiendo una ruta alejada de los obstáculos.
+  \item Ha varias formas de diseñar la función $U(q)$, algunas son:
+    \begin{itemize}
+    \item Algoritmo \textit{wavefront}, requiere una discretización del espacio (requiere mapa previo), pero no presenta mínimos locales.
+    \item Campos atractivos y repulsivos, no requieren mapa previo, pero pueden presentar mínimos locales. 
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Potenciales atractivos y repulsivos}
+  \includegraphics[width=\textwidth]{Figures/PotFieldsExample.png}
+  \begin{itemize}
+  \item \textbf{Campos repulsivos:} Por cada obstáculo se diseña una función $U_{rej_i}(q)$ con un máximo local en la posición $q_{o_i}$ del obstáculo.
+  \item \textbf{Campo atractivo:} Se diseña una función $U_{att}(q)$ con un mínimo global en el punto meta $q_g$.
+  \item La función potencial total $U(q)$ se calcula como
+    \[ U(q) = U_{att}(q) + \frac{1}{N}\sum_{i=1}^N U_{rej_i}(q)\]
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Fuerzas atractiva y repulsivas}
+  Puesto que el gradiente es un operador lineal, se pueden diseñar directamente las fuerzas atractiva $F_{att}(q) = \nabla U_{att}(q)$ y repulsivas $F_{rej_i}(q) = \nabla U_{rej_i}(q)$, de modo que la fuerza total será:
+  \[ \nabla U(q) = F(q) = F_{att}(q) + \frac{1}{N}\sum_{i=1}^N F_{rej_i}(q)\]
+  Una propuesta de estas fuerzas es:
+  \begin{eqnarray*}
+    \label{eq:attractive}
+    F_{att} &=& \zeta \dfrac{\left(q - q_g\right) }{\Vert q - q_g \Vert},\qquad \zeta > 0\label{eq:PotFieldsAttraction}\\
+    F_{rej} &=& \begin{cases}
+                  \eta\left(\sqrt{\dfrac{1}{d} - \dfrac{1}{d_0}}\right)\dfrac{q_{o_i} - q}{d}
+                  & \quad\textrm{si}\quad d < d_0\\
+                  0 & \quad\textrm{en otro caso}
+                \end{cases}
+  \end{eqnarray*}
+  donde
+  \begin{itemize}
+  \item $q=(x,y)$ es la posición del robot
+  \item $q_g=(x_g, y_g)$ es el punto que se desea alcanzar
+  \item $q_{o_i} = (x_{o_i}, y_{o_i})$ es la posición del $i$-ésimo obstáculo
+  \item $d_0$ es una distancia de influencia. Más allá de $d_0$ los obstáculos no producen efecto alguno
+  \item $\zeta$ y $\eta$, junto con $d_0$, son constantes de sintonización
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Evasión de obstáculos por campos potenciales}
+  \begin{itemize}
+  \item Aunque las ecuaciones anteriores suponen que se conoce la posición de cada obstáculo $q_{o_i}$, en realidad ésta aparece siempre en la diferencia $q_{o_i} - q$, es decir, solo se requiere su posición relativa al robot.
+  \item Los campos potenciales se implementan utilizando el lidar, donde cada lectura se considera un obstáculo. 
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/PotFieldsLidar.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{Evasión de obstáculos por campos potenciales}
+  Finalmente, para que el robot alcance el punto de menor potencial, se puede emplear el descenso del gradiente:
+  \[\]
+  \begin{algorithm}[H]
+  \DontPrintSemicolon
+  \KwData{Posición inicial $q_s$, posición meta $q_g$, posiciones $q_{oi}$ de los obstáculos y tolerancia $tol$}
+  \KwResult{Secuencia de puntos $\{q_0,q_1, q_2, \dots\}$ para evadir obstáculos y alcanzar el punto meta}
+  \;
+$q \leftarrow q_s$\;
+\While{$\Vert\nabla U(q)\Vert > tol$}
+{
+  $q \leftarrow q - \epsilon F(q)$\;
+  $[v,\omega] \leftarrow $ leyes de control con $q$ como posición deseada\;
+}
+  \caption{Descenso del gradiente para mover al robot a través de un campo potencial.}
+  \label{alg:PotFields}
+\end{algorithm}
+\end{frame}
+
+\begin{frame}\frametitle{Evasión de obstáculos por campos potenciales}
+  Ejemplo de movimiento:
+  \begin{figure}
+    \centering
+    \includegraphics[height=0.85\textheight]{Figures/PotFieldsExecution.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[containsverbatim]\frametitle{Práctica 6 - Evasión de obstáculos}
+ \textbf{Entregables:}
+  \begin{itemize}
+  \item Código modificado en la rama correspondiente del repositorio en línea.
+  \item Documento escrito con los siguientes puntos:
+    \begin{itemize}
+    \item Introducción (el problema del suavizado de rutas y el algoritmo del descenso del gradiente)
+    \item Objetivo: Implementar el descenso del gradiente para suavizar una ruta calculada con A*
+    \item Descripción del descenso del gradiente
+    \item Resultados del inciso anterior 
+    \item Conclusiones
+    \item Referencias
+    \end{itemize}
+  \end{itemize}
+  \textbf{Deadline: } 2022-09-27 al inicio de la clase. 
+\end{frame}
+
+\section{Localización}
+\begin{frame}\frametitle{Localización}
+  El problema de la localización consiste en determinar la configuración $q$ del robot dada un mapa y un conjunto de lecturas de los sensores. Existen principalmente dos tipos:
+  \[\]
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \textbf{Localización local: }
+      \begin{itemize}
+      \item Requiere una estimación inicial \textit{cercana} a la posición real del robot, de otro modo, no converge.
+      \item Suele ser menos costosa computacionalmente.
+      \item Un método común es el Filtro de Kalman Extendido.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \textbf{Localización global:}
+      \begin{itemize}
+      \item La estimación inicial puede ser cualquiera.
+      \item Suele ser computacionalmente costosa.
+      \item Un método común son los Filtros de Partículas. 
+      \end{itemize}
+      \[\]
+      \[\]
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Filtros de partículas}
+  Son un método de Monte Carlo, es decir, se repite un muestreo aleatorio hasta obtener resultados numéricos. La idea de los filtros de partículas es muy sencilla:
+  \begin{enumerate}
+  \item Inicializar un número grande $N$ de partículas (robots simulados) con configuraciones aleatorias $(x_i,y_i,\theta_i)$.
+  \item Para cada partícula, simular las lecturas del sensor (generalmente un lidar) dado un mapa.
+  \item Comparar cada lectura simulada con la lectura del sensor real, y asignar a cada partícula una medida de similitud.
+  \item \textbf{Realizar un muestreo aleatorio con reemplazo de $N$ partículas usando las similitudes como distribución de probabilidad}.
+  \item Agregar ruido a cada partícula muestreada.
+  \item Mover cada partícula una cantidad igual al desplazamiento del robot, más un pequeño ruido.
+  \item Volver al paso 2. 
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[containsverbatim]\frametitle{Práctica 7 - Localización}
+ \textbf{Entregables:}
+  \begin{itemize}
+  \item Código modificado en la rama correspondiente del repositorio en línea.
+  \item Documento escrito con los siguientes puntos:
+    \begin{itemize}
+    \item Introducción (el problema del suavizado de rutas y el algoritmo del descenso del gradiente)
+    \item Objetivo: Implementar el descenso del gradiente para suavizar una ruta calculada con A*
+    \item Descripción del descenso del gradiente
+    \item Resultados del inciso anterior 
+    \item Conclusiones
+    \item Referencias
+    \end{itemize}
+  \end{itemize}
+  \textbf{Deadline: } 2022-09-27 al inicio de la clase. 
+\end{frame}
+
+\begin{frame}\frametitle{Localización y mapeo simultáneos}
+  
+\end{frame}
+
+\section{Misión Etapa 4}
+\begin{frame}\frametitle{Su misión, si deciden aceptarla...}
+  
+\end{frame}
+
+\begin{frame}\frametitle{Para más información...}
   
 \end{frame}
 
