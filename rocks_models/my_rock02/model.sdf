@@ -30,7 +30,8 @@
           <geometry>
             <mesh>
                <uri>model://my_rock02/meshes/model.dae</uri>
-               <scale>0.06 0.06 0.01</scale>
+		 <pose>0 0 .031 0 0 0</pose>
+               <scale>0.06 0.06 0.06</scale>
              </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
