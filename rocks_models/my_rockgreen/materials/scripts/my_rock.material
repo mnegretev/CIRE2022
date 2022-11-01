@@ -1,0 +1,14 @@
+material myrock02/Diffuse
+{
+	receive_shadows off
+	technique
+	{
+		pass
+		{
+		texture_unit
+		{
+			texture skatter_rock_02.jpg
+			}
+		}
+	} 
+}
