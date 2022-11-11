@@ -3,7 +3,7 @@
   <model name="my_rock04">
     <static>0</static>
         <link name='link'>
-        
+        <pose>0 0 0 0 0 0</pose>
 
 	<inertial>
           <mass>0.3</mass>

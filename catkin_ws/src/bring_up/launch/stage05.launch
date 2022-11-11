@@ -4,16 +4,16 @@
   <arg name="robot_name" default="$(optenv ROBOT_NAME hsrb)"/>
   <include file="$(find hsrb_gazebo_launch)/launch/include/hsrb_gazebo_common.xml" pass_all_args="true" >
     <arg name="map" value="$(find bring_up)/maps/moon_station.yaml" />
-    <arg name="world_name" value="$(find bring_up)/worlds/moon_stones.world"/>
+    <arg name="world_name" value="$(find bring_up)/worlds/moon_station.world"/>
     <arg name="robot_pos" value="-x 0 -y 0 -z 0 -Y 0" />
     <arg name="use_laser_odom" value="false" />
   </include>
   
-<node pkg="publisher_meta_etapa2" name= "meta_publisher_node" type="obj_spawner.py" />
+<node pkg="publisher_meta_etapa2" name= "meta_publisher_node" type="rock_spawner.py" />
 
 
 <!--include file="$(find hsrb_moveit_config)/launch/hsrb_demo_with_controller.launch">
-  <arg name="use_gui" value="false"/>
+  <arg name="use_gui" value="true"/>
   <arg name="load_robot_description" value="false"/>
 </include-->
 

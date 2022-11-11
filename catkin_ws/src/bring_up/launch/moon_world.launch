@@ -1,12 +1,22 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="robot_name" default="$(optenv ROBOT_NAME hsrb)" />
+  
+  <arg name="robot_name" default="$(optenv ROBOT_NAME hsrb)"/>
   <include file="$(find hsrb_gazebo_launch)/launch/include/hsrb_gazebo_common.xml" pass_all_args="true" >
-    <arg name="map" value="$(find tmc_potential_maps)/maps/white_space/map.yaml" />
-    <arg name="world_name" value="$(find tmc_wrs_gazebo_worlds)/worlds/moon_stones.world "  />
- 
-	<arg name="robot_pos" value="-x 0 -y 0 -z 0 -Y 0" />
-    <arg name="use_laser_odom" value="true" />
+    <arg name="map" value="$(find bring_up)/maps/moon_station.yaml" />
+    <arg name="world_name" value="$(find bring_up)/worlds/moon_stones.world"/>
+    <arg name="robot_pos" value="-x 0 -y 0 -z 0 -Y 0" />
+    <arg name="use_laser_odom" value="false" />
   </include>
+  
+<!--node pkg="publisher_meta_etapa2" name= "meta_publisher_node" type="obj_spawner.py" /-->
+
+
+<include file="$(find hsrb_moveit_config)/launch/hsrb_demo_with_controller.launch">
+  <arg name="use_gui" value="false"/>
+  <arg name="load_robot_description" value="false"/>
+</include>
+
+
 </launch>
 
